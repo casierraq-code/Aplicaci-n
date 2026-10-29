@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <meta content="mobile_tab" name="shell-type" />
+  <title>Calma Mind - Autorregistro Emocional para Acompañamiento Psicológico</title>
+
+  <!-- Google Fonts: Newsreader & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-container": "#41372f",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#afa096",
+            "on-error": "#ffffff",
+            "surface-container-highest": "#e5e2db",
+            "primary-fixed": "#cee9da",
+            "tertiary-fixed-dim": "#d4c3b9",
+            "background": "#fcf9f2",
+            "surface-container-lowest": "#ffffff",
+            "tertiary-fixed": "#f1dfd4",
+            "on-primary-fixed-variant": "#354c41",
+            "on-error-container": "#93000a",
+            "secondary-container": "#e7def8",
+            "tertiary": "#685c53",
+            "inverse-surface": "#31312c",
+            "on-primary-container": "#273d33",
+            "outline-variant": "#c2c8c3",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#cbc3db",
+            "on-surface-variant": "#424844",
+            "primary-fixed-dim": "#b3ccbf",
+            "on-secondary-fixed-variant": "#494458",
+            "on-secondary-container": "#676176",
+            "on-secondary": "#ffffff",
+            "on-surface": "#1c1c18",
+            "primary": "#4c6358",
+            "secondary-fixed": "#e7def8",
+            "surface": "#fcf9f2",
+            "secondary": "#615b70",
+            "inverse-on-surface": "#f3f0e9",
+            "on-tertiary": "#ffffff",
+            "surface-bright": "#fcf9f2",
+            "inverse-primary": "#b3ccbf",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed-variant": "#50453d",
+            "on-tertiary-fixed": "#221a13",
+            "surface-tint": "#4c6358",
+            "surface-container-high": "#ebe8e1",
+            "primary-container": "#8fa89b",
+            "surface-container": "#f1eee7",
+            "surface-variant": "#e5e2db",
+            "surface-container-low": "#f6f3ec",
+            "on-primary-fixed": "#092017",
+            "surface-dim": "#dcdad3",
+            "outline": "#727974",
+            "on-background": "#1c1c18",
+            "on-secondary-fixed": "#1d192b"
+          },
+          borderRadius: {
+            DEFAULT: "1rem",
+            lg: "2rem",
+            xl: "3rem",
+            full: "9999px"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            gutter: "1rem",
+            "space-lg": "1.5rem",
+            margin: "1.25rem",
+            "margin-tablet": "2rem",
+            "space-md": "1rem",
+            "gutter-tablet": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.25rem"
+          },
+          fontFamily: {
+            "label-lg": ["Plus Jakarta Sans"],
+            display: ["Newsreader"],
+            "headline-md": ["Newsreader"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Newsreader"],
+            "headline-sm": ["Newsreader"],
+            "display-mobile": ["Newsreader"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }],
+            display: ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "400" }],
+            "headline-md": ["22px", { lineHeight: "30px", fontWeight: "500" }],
+            "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "400" }],
+            "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "500" }],
+            "display-mobile": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "400" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-lg": ["17px", { lineHeight: "26px", fontWeight: "400" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Biblioteca html2pdf para generación fiel de PDF clínico -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Estilos complementarios y animaciones -->
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container">
+
+  <!-- ============================================================ -->
+  <!-- CABECERA PRINCIPAL FIJA (Con Botón de Crisis & Paz Interior) -->
+  <!-- ============================================================ -->
+  <header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(92,84,73,0.03)] pt-safe">
+    <div class="h-16 px-margin flex items-center justify-between max-w-xl mx-auto">
+      <!-- Identidad de Marca -->
+      <div class="flex items-center gap-space-sm min-w-0">
+        <img alt="Calma Mind Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1Wti7jVO6qjQWVgoVBy0aoTcjDb29Wr6D29JMhGGxK4qlXojnwCUVvsclSXL9p9kPutDywdvZAVu_PK4iqsomOFGrPwb9dUAONBqrTrdprBxxiMshUuZLNM6Zt8TqrHiQtf0p71ilZxTTvAQ8pqVzgrd9AbrW-Y8bIuZQTdWk0rG_SVCMsNuV9YbYJBMH7P1Me7C4YFWGkCQ7JZS-o9HlIQQC2yMBuXICBgi7g9hY-5" />
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-label-sm text-primary tracking-wide uppercase">Calma Mind</span>
+          <h1 id="header-section-title" class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Hoy</h1>
+        </div>
+      </div>
+
+      <!-- Acciones de Cabecera: Crisis (PRD 5), Paz interior y Perfil -->
+      <div class="flex items-center gap-space-xs flex-shrink-0">
+        <!-- Botón de Orientación en Situaciones de Crisis (Requisito PRD #5) -->
+        <button id="btn-sos-crisis" aria-label="Orientación en crisis emocional" class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-error-container/60 hover:bg-error-container text-on-error-container transition-all active:scale-95" title="Orientación y líneas de ayuda en crisis">
+          <span class="material-symbols-outlined text-[18px] text-error">emergency</span>
+          <span class="font-label-sm text-label-sm font-semibold tracking-tight hidden sm:inline">SOS Crisis</span>
+        </button>
+
+        <!-- Botón Paz interior (Respiración Guiada) -->
+        <button id="btn-spa-header" aria-label="Paz interior" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" title="Pausa de respiración">
+          <span class="material-symbols-outlined text-[22px]">spa</span>
+        </button>
+
+        <!-- Avatar de Perfil Terapéutico -->
+        <a id="btn-profile-header" class="flex items-center justify-center w-11 h-11 rounded-full p-0.5 hover:ring-2 hover:ring-primary-container transition-all" href="#" title="Ver perfil terapéutico">
+          <img alt="Foto de perfil" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0I03R2sjJdmklICf3bVbF49uguVJPyc4pwPRzo0pFm4-Id98aVmMAZA6Sw__x35Tw3fHlNkMqF6_0fSiLOO5acbYvmW9DbblvdJHJ4kVdy4ZAI9zFqZEU9cvoxYqnHCI5bLAJbDT1mpYF2CEIhr4Fzzywt0yn0AzrlO5ywJWDCTNvD44MffhHHP5Ly8Y0mGX6JBKYPtsr_YGEaqmyIVUKV8i5x8Wyv6YYVlNk4L4" />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- CONTENEDOR PRINCIPAL DE VISTAS (SPA) -->
+  <!-- ============================================================ -->
+  <main class="flex-1 flex flex-col w-full max-w-xl mx-auto px-margin pt-16 pb-28 bg-surface">
+
+    <!-- ---------------------------------------------------------- -->
+    <!-- 1. VISTA: HOY (Bienestar y Calma) -->
+    <!-- ---------------------------------------------------------- -->
+    <section id="view-hoy" class="view-section active-view w-full">
+      <div class="flex flex-col w-full gap-space-lg">
+        <!-- Saludo Empático y Conexión Diaria -->
+        <div class="flex flex-col gap-space-xs pt-space-xs">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">
+              <span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+              Jueves, 24 de Octubre
+            </span>
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+              <span class="material-symbols-outlined text-[14px]">wb_sunny</span>
+              Momento presente
+            </span>
+          </div>
+          <div class="mt-space-xs">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">
+              Buenos días, Sofía.
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mt-1">
+              Respira hondo. ¿Cómo te recibe este nuevo día?
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta Destacada: Registro Emocional Inmediato -->
+        <div class="relative overflow-hidden rounded-xl bg-primary-fixed p-margin shadow-sm flex flex-col gap-space-md">
+          <div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-surface-container-lowest/40 blur-2xl pointer-events-none"></div>
+          <div class="flex items-start justify-between relative z-10">
+            <div class="flex flex-col gap-0.5">
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-fixed-variant">
+                Pausa Consciente
+              </span>
+              <h3 class="font-headline-sm text-headline-sm text-on-primary-fixed">
+                Chequeo Emocional
+              </h3>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-surface-container-lowest/80 flex items-center justify-center text-primary shadow-sm">
+              <span class="material-symbols-outlined text-[22px]">self_improvement</span>
+            </div>
+          </div>
+          <p class="font-body-md text-body-md text-on-primary-fixed-variant relative z-10">
+            Tómate un instante sin juzgar lo que sientes. ¿Qué emoción tiene más presencia ahora mismo?
+          </p>
+
+          <!-- Selector rápido de 5 estados en micro-píldoras -->
+          <div class="flex flex-wrap gap-2 relative z-10" id="mood-selector">
+            <button class="mood-pill group flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest/90 text-on-surface hover:bg-surface-container-lowest transition-all shadow-sm active:scale-95" data-mood="calma" type="button">
+              <span class="material-symbols-outlined text-[18px] text-primary group-hover:scale-110 transition-transform">water_drop</span>
+              <span class="font-label-md text-label-md">Calma</span>
+            </button>
+            <button class="mood-pill group flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest/90 text-on-surface hover:bg-surface-container-lowest transition-all shadow-sm active:scale-95" data-mood="gratitud" type="button">
+              <span class="material-symbols-outlined text-[18px] text-secondary group-hover:scale-110 transition-transform">favorite</span>
+              <span class="font-label-md text-label-md">Gratitud</span>
+            </button>
+            <button class="mood-pill group flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest/90 text-on-surface hover:bg-surface-container-lowest transition-all shadow-sm active:scale-95" data-mood="neutral" type="button">
+              <span class="material-symbols-outlined text-[18px] text-tertiary group-hover:scale-110 transition-transform">filter_vintage</span>
+              <span class="font-label-md text-label-md">Neutral</span>
+            </button>
+            <button class="mood-pill group flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest/90 text-on-surface hover:bg-surface-container-lowest transition-all shadow-sm active:scale-95" data-mood="tristeza" type="button">
+              <span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:scale-110 transition-transform">grain</span>
+              <span class="font-label-md text-label-md">Tristeza</span>
+            </button>
+            <button class="mood-pill group flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-lowest/90 text-on-surface hover:bg-surface-container-lowest transition-all shadow-sm active:scale-95" data-mood="agobio" type="button">
+              <span class="material-symbols-outlined text-[18px] text-tertiary-container group-hover:scale-110 transition-transform">cloud</span>
+              <span class="font-label-md text-label-md">Agobio</span>
+            </button>
+          </div>
+
+          <div class="pt-space-xs relative z-10">
+            <a class="w-full flex items-center justify-center gap-2 py-3.5 px-margin rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-on-primary-fixed-variant active:scale-98 transition-all" data-path="registrar" href="#">
+              <span>Hacer mi registro de hoy</span>
+              <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Camino de Constancia Consciente (Gentle Journey) -->
+        <div class="rounded-xl bg-surface-container-lowest p-margin shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[20px] text-primary">local_florist</span>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface">Camino Consciente</h3>
+            </div>
+            <span class="font-label-md text-label-md text-primary font-medium">4 de 7 días</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            4 días floreciendo y conectando contigo esta semana. Cada respiración cuenta, sin prisa ni presiones.
+          </p>
+
+          <!-- Camino visual de piedras zen / brotes floreciendo -->
+          <div class="grid grid-cols-7 gap-1.5 pt-space-xs items-center">
+            <!-- Lunes: Florecido -->
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-xs">
+                <span class="material-symbols-outlined text-[16px]">park</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Lun</span>
+            </div>
+            <!-- Martes: Florecido -->
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-xs">
+                <span class="material-symbols-outlined text-[16px]">spa</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Mar</span>
+            </div>
+            <!-- Miércoles: Florecido -->
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-xs">
+                <span class="material-symbols-outlined text-[16px]">eco</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Mié</span>
+            </div>
+            <!-- Jueves: Activo hoy -->
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">wb_sunny</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-primary font-semibold">Hoy</span>
+            </div>
+            <!-- Viernes: Semilla en reposo -->
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+                <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+              </div>
+              <span class="font-label-sm text-label-sm text-outline">Vie</span>
+            </div>
+            <!-- Sábado: Semilla en reposo -->
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+                <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+              </div>
+              <span class="font-label-sm text-label-sm text-outline">Sáb</span>
+            </div>
+            <!-- Domingo: Semilla en reposo -->
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+                <span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+              </div>
+              <span class="font-label-sm text-label-sm text-outline">Dom</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ancla de Calma del Día: Ilustración + Reflexión -->
+        <div class="rounded-xl bg-surface-container p-margin shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-center gap-2 text-on-tertiary-container">
+            <span class="material-symbols-outlined text-[20px] text-tertiary">anchor</span>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider">Tu ancla de calma de hoy</span>
+          </div>
+          <!-- Fotografía evocadora y poética -->
+          <div class="relative w-full h-36 rounded-lg overflow-hidden shadow-xs">
+            <img class="w-full h-full object-cover" alt="Ambiente sereno" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv99oqNj_ezbQ4lgGeVUQBBLG7LxvrMzZLU-rp5kWu2T2QmugGxI0-W1y6KDUl_XQcLSnKDzgdSUkgX2oj0tDrtWYV_4Q7g5KFWI-M0XByyQetjss83Xbq3T-6FoaEGctuKoM1wMnzTZ_HFtPjUgZcVzONWs_CFh8zi3jpuQ0XE5-usuESWxJYhhhxgph13sWKMEb7R7vDD_9QHVDthDo13A00BtVRya9AaABGudE" />
+            <div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 left-3 flex items-center gap-1.5 text-surface-container-lowest">
+              <span class="material-symbols-outlined text-[16px]">air</span>
+              <span class="font-label-sm text-label-sm">Espacio para respirar</span>
+            </div>
+          </div>
+          <blockquote class="font-headline-sm text-headline-sm text-on-surface italic leading-snug">
+            “No tienes que controlar tus pensamientos, solo darles espacio para pasar.”
+          </blockquote>
+          <div class="flex items-center justify-between pt-1">
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Práctica: Observar sin intervenir (2 min)</span>
+            <button id="btn-breathe-now" class="inline-flex items-center gap-1 text-primary font-label-md text-label-md hover:underline" type="button">
+              <span>Respirar ahora</span>
+              <span class="material-symbols-outlined text-[16px]">play_circle</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjeta de Preparación Terapéutica -->
+        <div class="rounded-xl bg-secondary-container p-margin shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-space-xs">
+              <div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-lowest flex-shrink-0 shadow-xs">
+                <img class="w-full h-full object-cover" alt="Dra. Marcela" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQsIqR7qESyUVaAeBxhMYq0AyxzSQWSJeFr3kT3t61bo6CO9j_zpxAK98zO5LB0r6rdctc22zxMb6LrR-fAuShhy1Mqe7l9luJFQ53H3q5igdbgLDCkIN3ni3wDWHl_Qv-fBTNzrMRSakCCCWGKd-fCvdTSoJv-U2_3A65h7wiLcZsnf85NHJNkvD7pHFodLxfcDdEBU1Koq7W-mfKTqRg7lDyY2iq9kSz05RDfyA" />
+              </div>
+              <div class="flex flex-col">
+                <span class="font-headline-sm text-headline-sm text-on-secondary-container">Dra. Marcela R.</span>
+                <span class="font-label-sm text-label-sm text-on-secondary-container/80">Terapia cognitivo-conductual</span>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/80 text-on-secondary-container font-label-md text-label-md">
+              En 3 días
+            </span>
+          </div>
+          <p class="font-body-md text-body-md text-on-secondary-container">
+            Tienes <strong class="font-semibold text-on-secondary-container">5 autorregistros</strong> listos para compartir. Esto ayudará a repasar los momentos de mayor tensión y tus avances.
+          </p>
+          <div class="flex items-center gap-2 pt-space-xs">
+            <a class="flex-1 py-2.5 px-space-md rounded-full bg-surface-container-lowest text-on-secondary-container font-label-md text-label-md text-center hover:bg-surface-bright shadow-xs transition-colors" data-path="sesion" href="#">
+              Revisar notas compartidas
+            </a>
+            <button aria-label="Añadir nota urgente" class="w-10 h-10 rounded-full bg-surface-container-lowest text-on-secondary-container flex items-center justify-center hover:bg-surface-bright shadow-xs transition-colors" type="button" data-path="sesion">
+              <span class="material-symbols-outlined text-[20px]">note_add</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Actividad Reciente: Ecos Recientes -->
+        <div class="flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Ecos Recientes</h3>
+            <a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-0.5" data-path="diario" href="#">
+              Ver todo el diario
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          </div>
+
+          <!-- Contenedor dinámico de registros recientes -->
+          <div id="ecos-recientes-container" class="flex flex-col gap-space-sm">
+            <!-- Rellenado por app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------- -->
+    <!-- 2. VISTA: REGISTRAR (Check-in Emocional) -->
+    <!-- ---------------------------------------------------------- -->
+    <section id="view-registrar" class="view-section w-full">
+      <div class="flex flex-col w-full gap-space-lg pb-space-xl">
+        <!-- Encabezado empático -->
+        <header class="flex flex-col items-center text-center px-space-xs mt-space-sm">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed mb-space-sm shadow-sm">
+            <span class="material-symbols-outlined text-[16px]">self_improvement</span>
+            <span class="font-label-sm text-label-sm">Espacio compasivo</span>
+          </div>
+          <h2 class="font-headline-md text-headline-md text-on-surface text-balance">
+            ¿Qué emoción habita en ti ahora?
+          </h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-1">
+            Tómate un segundo para sentirla sin juzgarla. Todo lo que sientes es bienvenido.
+          </p>
+        </header>
+
+        <!-- Selector Táctil de Emociones -->
+        <section class="flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between px-space-xs">
+            <span class="font-label-lg text-label-lg text-on-surface">Tu estado principal</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Toca para elegir</span>
+          </div>
+          <div class="grid grid-cols-2 gap-space-sm" id="emotion-grid">
+            <!-- Tristeza -->
+            <button class="emotion-card group relative flex flex-col items-start p-space-md rounded-lg bg-secondary-fixed/50 hover:bg-secondary-fixed text-on-secondary-container transition-all duration-300 text-left shadow-sm active:scale-[0.98]" data-emotion="tristeza" type="button">
+              <div class="w-10 h-10 rounded-full bg-surface-container-lowest/80 flex items-center justify-center text-secondary mb-space-sm shadow-sm group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-[22px]">rainy</span>
+              </div>
+              <span class="font-headline-sm text-headline-sm text-on-surface">Tristeza</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Nostalgia, pesadez</span>
+              <div class="check-pill absolute top-3 right-3 hidden w-5 h-5 rounded-full bg-secondary text-surface-container-lowest items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+              </div>
+            </button>
+
+            <!-- Calma y Paz (Default selected) -->
+            <button class="emotion-card is-selected group relative flex flex-col items-start p-space-md rounded-lg bg-primary-fixed text-on-primary-fixed-variant transition-all duration-300 text-left shadow-md active:scale-[0.98]" data-emotion="calma" type="button">
+              <div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary mb-space-sm shadow-sm group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-[22px]">energy_savings_leaf</span>
+              </div>
+              <span class="font-headline-sm text-headline-sm text-on-surface">Calma y Paz</span>
+              <span class="font-label-sm text-label-sm text-on-primary-fixed-variant mt-0.5">Serenidad, balance</span>
+              <div class="check-pill absolute top-3 right-3 flex w-5 h-5 rounded-full bg-primary text-on-primary items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+              </div>
+            </button>
+
+            <!-- Alegría / Gratitud -->
+            <button class="emotion-card group relative flex flex-col items-start p-space-md rounded-lg bg-tertiary-fixed/60 hover:bg-tertiary-fixed text-on-tertiary-fixed-variant transition-all duration-300 text-left shadow-sm active:scale-[0.98]" data-emotion="alegria" type="button">
+              <div class="w-10 h-10 rounded-full bg-surface-container-lowest/80 flex items-center justify-center text-tertiary mb-space-sm shadow-sm group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-[22px]">wb_sunny</span>
+              </div>
+              <span class="font-headline-sm text-headline-sm text-on-surface">Alegría</span>
+              <span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant mt-0.5">Gratitud, apertura</span>
+              <div class="check-pill absolute top-3 right-3 hidden w-5 h-5 rounded-full bg-tertiary text-on-tertiary items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+              </div>
+            </button>
+
+            <!-- Ansiedad / Inquietud -->
+            <button class="emotion-card group relative flex flex-col items-start p-space-md rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface transition-all duration-300 text-left shadow-sm active:scale-[0.98]" data-emotion="ansiedad" type="button">
+              <div class="w-10 h-10 rounded-full bg-surface-container-lowest/80 flex items-center justify-center text-on-surface-variant mb-space-sm shadow-sm group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-[22px]">air</span>
+              </div>
+              <span class="font-headline-sm text-headline-sm text-on-surface">Inquietud</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Alerta, aceleración</span>
+              <div class="check-pill absolute top-3 right-3 hidden w-5 h-5 rounded-full bg-on-surface text-surface-container-lowest items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+              </div>
+            </button>
+
+            <!-- Enojo / Frustración (Span 2) -->
+            <button class="emotion-card col-span-2 group relative flex items-center justify-between p-space-md rounded-lg bg-error-container/40 hover:bg-error-container/60 text-on-surface transition-all duration-300 text-left shadow-sm active:scale-[0.98]" data-emotion="enojo" type="button">
+              <div class="flex items-center gap-space-md">
+                <div class="w-10 h-10 rounded-full bg-surface-container-lowest/80 flex items-center justify-center text-error mb-0 shadow-sm group-hover:scale-105 transition-transform flex-shrink-0">
+                  <span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-headline-sm text-headline-sm text-on-surface">Enojo o Frustración</span>
+                  <span class="font-label-sm text-label-sm text-on-surface-variant">Límites sobrepasados, tensión</span>
+                </div>
+              </div>
+              <div class="check-pill hidden w-5 h-5 rounded-full bg-error text-on-error items-center justify-center shadow-sm">
+                <span class="material-symbols-outlined text-[14px]">check</span>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- Calibrador Sensorial de Intensidad (1 a 10) -->
+        <section class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+              <label class="font-label-lg text-label-lg text-on-surface" for="intensity-slider">Intensidad sentida</label>
+            </div>
+            <span class="px-3 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md" id="intensity-badge">
+              Nivel <span class="font-bold" id="intensity-val">7</span> / 10
+            </span>
+          </div>
+
+          <div class="flex flex-col gap-space-sm pt-2">
+            <div class="relative w-full flex items-center">
+              <input class="w-full h-2.5 bg-surface-container rounded-full appearance-none cursor-pointer accent-primary focus:outline-none" id="intensity-slider" max="10" min="1" type="range" value="7" />
+            </div>
+            <div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm px-1">
+              <span class="flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-surface-container-highest"></span>
+                Apenas perceptible
+              </span>
+              <span class="font-label-md text-label-md text-primary font-semibold" id="intensity-descriptor">
+                Notable y clara
+              </span>
+              <span class="flex items-center gap-1">
+                Muy intensa
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sensaciones Corporales (Anclas Somáticas) -->
+        <section class="flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between px-space-xs">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-tertiary text-[18px]">accessibility_new</span>
+              <span class="font-label-lg text-label-lg text-on-surface">¿Dónde habita en el cuerpo?</span>
+            </div>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Multiselección</span>
+          </div>
+          <div class="flex flex-wrap gap-2" id="body-chips">
+            <button class="somatic-chip active px-4 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-body-sm text-body-sm shadow-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px] text-primary">favorite</span>
+              <span>Pecho relajado</span>
+            </button>
+            <button class="somatic-chip active px-4 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-body-sm text-body-sm shadow-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px] text-primary">air</span>
+              <span>Respiración fluida</span>
+            </button>
+            <button class="somatic-chip px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px]">fitness_center</span>
+              <span>Tensión en hombros</span>
+            </button>
+            <button class="somatic-chip px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px]">cyclone</span>
+              <span>Nudo en estómago</span>
+            </button>
+            <button class="somatic-chip px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px]">flutter_dash</span>
+              <span>Ligereza global</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Contexto que acompañaba el momento -->
+        <section class="flex flex-col gap-space-sm">
+          <div class="flex items-center gap-1.5 px-space-xs">
+            <span class="material-symbols-outlined text-secondary text-[18px]">location_searching</span>
+            <span class="font-label-lg text-label-lg text-on-surface">¿Qué contexto te rodea?</span>
+          </div>
+          <div class="flex flex-wrap gap-2" id="context-chips">
+            <button class="context-chip active px-4 py-2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-body-sm text-body-sm shadow-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px]">nature_people</span>
+              <span>Soledad tranquila</span>
+            </button>
+            <button class="context-chip px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px]">bedtime</span>
+              <span>Descanso</span>
+            </button>
+            <button class="context-chip px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px]">laptop_chromebook</span>
+              <span>Trabajo</span>
+            </button>
+            <button class="context-chip px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px]">family_restroom</span>
+              <span>Familia</span>
+            </button>
+            <button class="context-chip px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-body-sm text-body-sm flex items-center gap-1.5 transition-all" type="button">
+              <span class="material-symbols-outlined text-[16px]">psychology_alt</span>
+              <span>Terapia</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Cajón opcional para nota reflexiva -->
+        <section class="flex flex-col">
+          <button class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface transition-colors shadow-sm" id="toggle-note-btn" type="button">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]">edit_note</span>
+              <span class="font-body-md text-body-md text-on-surface">Añadir nota reflexiva (opcional)</span>
+            </div>
+            <span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform" id="note-icon">expand_more</span>
+          </button>
+          <div class="hidden mt-space-sm" id="note-container">
+            <textarea id="reflective-note-input" class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:ring-0 shadow-sm resize-none" placeholder="Si deseas desahogar una frase o pensamiento, este es tu refugio..." rows="3"></textarea>
+          </div>
+        </section>
+
+        <!-- Botón de Acción Principal -->
+        <footer class="flex flex-col gap-space-sm pt-space-xs">
+          <button class="w-full py-4 px-space-lg rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-md hover:bg-primary hover:text-on-primary transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98]" id="save-moment-btn" type="button">
+            <span class="material-symbols-outlined text-[22px]">check_circle</span>
+            <span>Guardar mi momento</span>
+          </button>
+          <div class="flex items-center justify-center gap-1.5 text-center text-on-surface-variant pt-1">
+            <span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+            <span class="font-label-sm text-label-sm">Tus registros son 100% privados y seguros en tu dispositivo</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------- -->
+    <!-- 3. VISTA: DIARIO (Experiencias y Pensamientos TCC) -->
+    <!-- ---------------------------------------------------------- -->
+    <section id="view-diario" class="view-section w-full">
+      <div class="flex flex-col w-full space-y-space-lg">
+        <!-- Header Action & Supportive Orientation -->
+        <div class="flex flex-col gap-space-sm pt-space-xs">
+          <div class="flex items-center justify-between gap-space-sm">
+            <div class="flex flex-col">
+              <span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Espacio de Auto-observación</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface">Diario de Situaciones</h2>
+            </div>
+            <button class="flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm active:scale-95 transition-transform duration-200" id="toggle-editor-btn">
+              <span class="material-symbols-outlined text-[18px]">edit_note</span>
+              <span>+ Nueva entrada</span>
+            </button>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Observa lo que ocurrió, lo que tu mente te dijo y cómo respondió tu cuerpo con una mirada curiosa y sin juicios.
+          </p>
+        </div>
+
+        <!-- Filter Ribbon (Horizontal Scrollable Chips) -->
+        <div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none" id="journal-filter-ribbon">
+          <button data-filter="all" class="px-3.5 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md flex items-center gap-1 whitespace-nowrap shadow-sm">
+            <span class="material-symbols-outlined text-[15px]">date_range</span>
+            Esta semana
+          </button>
+          <button data-filter="all" class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:bg-surface-container-high transition-colors">
+            Todas las emociones
+          </button>
+          <button data-filter="calma" class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:bg-surface-container-high transition-colors">
+            🌿 Calma
+          </button>
+          <button data-filter="ansiedad" class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:bg-surface-container-high transition-colors">
+            🌊 Inquietud
+          </button>
+          <button data-filter="reframe" class="px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap active:bg-surface-container-high transition-colors">
+            ✨ Con reencuadre
+          </button>
+        </div>
+
+        <!-- Formulario Guiado: TCC A-B-C-D -->
+        <div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col space-y-space-md transition-all duration-300" id="cbt-editor-card">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+                <span class="material-symbols-outlined text-[18px]">psychology_alt</span>
+              </div>
+              <div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Explora tu Experiencia</h3>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">Paso a paso, a tu propio ritmo</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-surface-container-low text-tertiary font-label-sm text-label-sm">
+              Borrador activo
+            </span>
+          </div>
+
+          <!-- Step 1: The Situation (A) -->
+          <div class="flex flex-col gap-1.5">
+            <label class="flex items-center gap-1.5 font-label-lg text-label-lg text-on-surface">
+              <span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[11px] font-semibold flex items-center justify-center">1</span>
+              La Situación <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(¿Qué ocurrió?)</span>
+            </label>
+            <div class="relative bg-surface-container-low rounded-DEFAULT p-3 focus-within:bg-surface-container-lowest transition-colors">
+              <textarea class="w-full bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none resize-none" id="input-situation" placeholder="Reunión de equipo donde hubo cambios inesperados de proyecto..." rows="2">Reunión de equipo donde hubo cambios inesperados de proyecto</textarea>
+            </div>
+            <p class="font-label-sm text-label-sm text-tertiary px-1">Describe los hechos observables como si fueras una cámara de video.</p>
+          </div>
+
+          <!-- Step 2: The Automatic Thought (B) -->
+          <div class="flex flex-col gap-1.5">
+            <label class="flex items-center gap-1.5 font-label-lg text-label-lg text-on-surface">
+              <span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[11px] font-semibold flex items-center justify-center">2</span>
+              El Pensamiento Automático <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(¿Qué te dijiste?)</span>
+            </label>
+            <div class="relative bg-surface-container-low rounded-DEFAULT p-3 focus-within:bg-surface-container-lowest transition-colors">
+              <textarea class="w-full bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none resize-none" id="input-thought" placeholder="¿Qué frase cruzó por tu mente en ese instante?" rows="2">Pensé que no sería capaz de adaptarme a tiempo y que decepcionaría al resto.</textarea>
+            </div>
+          </div>
+
+          <!-- Step 3: Emotional & Bodily Response (C) -->
+          <div class="flex flex-col gap-1.5">
+            <label class="flex items-center gap-1.5 font-label-lg text-label-lg text-on-surface">
+              <span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface text-[11px] font-semibold flex items-center justify-center">3</span>
+              Reacción Emocional y Corporal <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(Cuerpo y acción)</span>
+            </label>
+            <div class="relative bg-surface-container-low rounded-DEFAULT p-3 focus-within:bg-surface-container-lowest transition-colors">
+              <textarea class="w-full bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none resize-none" id="input-reaction" placeholder="¿Qué sentiste en el cuerpo y cómo respondiste?" rows="2">Sentí opresión en el pecho y ganas de retirarme, pero decidí hacer una pausa de respiración de 3 minutos.</textarea>
+            </div>
+            <!-- Quick Intensity Meter -->
+            <div class="flex items-center justify-between bg-surface-container-low rounded-DEFAULT px-3 py-2 mt-1">
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Intensidad sentida:</span>
+              <div class="flex items-center gap-1" id="intensity-stars">
+                <button type="button" class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">4</button>
+                <button type="button" class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">5</button>
+                <button type="button" class="w-7 h-7 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-bold shadow-sm">6</button>
+                <button type="button" class="w-7 h-7 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">7</button>
+                <button type="button" class="w-7 h-7 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">8</button>
+                <span class="font-label-sm text-label-sm text-tertiary ml-1">/10</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Gentle Alternative Perspective (D - Reframe) -->
+          <div class="flex flex-col gap-1.5 p-3 rounded-DEFAULT bg-tertiary-fixed/30">
+            <div class="flex items-center justify-between">
+              <label class="flex items-center gap-1.5 font-label-lg text-label-lg text-on-tertiary-container">
+                <span class="material-symbols-outlined text-[18px] text-tertiary">spa</span>
+                Perspectiva más amable
+              </label>
+              <span class="font-label-sm text-label-sm text-tertiary">Reencuadre</span>
+            </div>
+            <div class="relative bg-surface-container-lowest rounded-DEFAULT p-3 shadow-sm">
+              <textarea class="w-full bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none resize-none" id="input-reframe" placeholder="¿Qué le dirías a un buen amigo si estuviera viviendo esto?" rows="2">Es un reto nuevo con incertidumbre, pero ya he resuelto transiciones parecidas antes y puedo pedir apoyo.</textarea>
+            </div>
+            <p class="font-label-sm text-label-sm text-on-tertiary-fixed-variant">
+              No se trata de pensar en positivo a la fuerza, sino de encontrar una verdad más compasiva y equilibrada.
+            </p>
+          </div>
+
+          <!-- Action Bar inside Card -->
+          <div class="flex items-center justify-end gap-space-xs pt-2">
+            <button type="button" class="px-4 py-2 rounded-full text-on-surface-variant font-label-md text-label-md active:bg-surface-container transition-colors" onclick="window.app.showToast('Borrador guardado temporalmente.')">
+              Guardar borrador
+            </button>
+            <button class="px-5 py-2.5 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:opacity-90 active:scale-95 transition-all flex items-center gap-1.5" id="save-entry-btn">
+              <span class="material-symbols-outlined text-[18px]">check</span>
+              Registrar en mi diario
+            </button>
+          </div>
+        </div>
+
+        <!-- Historial de Entradas Anteriores -->
+        <div class="flex flex-col space-y-space-md pt-space-xs">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[20px] text-primary">auto_stories</span>
+              <h3 class="font-headline-sm text-headline-sm text-on-surface">Entradas Anteriores</h3>
+            </div>
+            <span class="font-label-sm text-label-sm text-on-surface-variant" id="cbt-entries-count">2 registros esta semana</span>
+          </div>
+
+          <!-- Contenedor dinámico de entradas -->
+          <div id="cbt-entries-container" class="flex flex-col gap-space-md">
+            <!-- Rellenado por app.js -->
+          </div>
+        </div>
+
+        <!-- Gentle Closing Reminder / Self-Compassion Moment -->
+        <div class="bg-surface-container-low rounded-lg p-space-md flex items-center gap-space-sm shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-[20px]">lightbulb</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-label-md text-label-md text-on-surface font-semibold">Tus pensamientos son solo hipótesis</span>
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+              No tienes que creer todo lo que tu mente te dice en momentos de tensión. Darles espacio en papel les quita peso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------- -->
+    <!-- 4. VISTA: SESIÓN (Resumen para Psicólogo) -->
+    <!-- ---------------------------------------------------------- -->
+    <section id="view-sesion" class="view-section w-full">
+      <div class="flex flex-col w-full gap-space-lg pb-10">
+        <!-- Selector de Período y Botón Compartir -->
+        <section class="flex flex-col gap-space-sm pt-space-xs">
+          <div class="flex items-center justify-between gap-space-sm bg-surface-container-low p-space-sm rounded-full shadow-sm">
+            <div class="flex items-center gap-space-xs min-w-0 pl-space-xs">
+              <span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+              <button class="flex items-center gap-1 font-label-md text-label-md text-on-surface truncate" id="periodSelectorBtn">
+                <span>Semana 18 - 24 Octubre</span>
+                <span class="material-symbols-outlined text-[18px] text-tertiary">keyboard_arrow_down</span>
+              </button>
+            </div>
+            <button aria-label="Compartir reporte clínico" class="flex items-center gap-1.5 bg-surface-container-lowest text-primary px-space-md py-1.5 rounded-full shadow-sm hover:bg-surface-container-highest transition-all active:scale-95" id="shareReportBtn">
+              <span class="material-symbols-outlined text-[18px]">ios_share</span>
+              <span class="font-label-sm text-label-sm font-semibold tracking-wide">Compartir</span>
+            </button>
+          </div>
+          <!-- Banner suave de contexto clínico -->
+          <div class="flex items-center justify-between px-space-md py-2.5 bg-secondary-container/60 text-on-secondary-container rounded-lg">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px] text-secondary">psychology_alt</span>
+              <span class="font-label-sm text-label-sm">Modo consulta: listo para revisar con tu especialista</span>
+            </div>
+            <span class="font-label-sm text-label-sm bg-surface-container-lowest/80 text-secondary px-2 py-0.5 rounded-full">Dra. Marcela</span>
+          </div>
+        </section>
+
+        <!-- Tarjeta de Clima Emocional Semanal -->
+        <section class="bg-surface-container-lowest rounded-lg p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary">Visión General</span>
+              <h2 class="font-headline-md text-headline-md text-on-surface">Clima Emocional</h2>
+            </div>
+            <div class="flex flex-col items-end">
+              <div class="flex items-baseline gap-1 bg-primary-fixed/50 text-on-primary-fixed-variant px-2.5 py-1 rounded-full">
+                <span class="font-label-lg text-label-lg font-bold" id="weekly-avg-display">4.8</span>
+                <span class="font-label-sm text-label-sm text-tertiary">/ 10</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-primary mt-1 font-medium text-right">Semana estable y balanceada</span>
+            </div>
+          </div>
+
+          <!-- Gráfico Suave de Ondas y Flujo Diario -->
+          <div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-md">
+            <div class="flex items-center justify-between">
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Fluctuación diaria (Lun - Dom)</span>
+              <span class="font-label-sm text-label-sm text-tertiary flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span> Mayor serenidad
+              </span>
+            </div>
+
+            <!-- SVG Curva Orgánica / Resonancia -->
+            <div class="relative w-full h-32 flex items-end">
+              <svg class="w-full h-full overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 320 100">
+                <defs>
+                  <lineargradient id="softWaveGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#8fa89b" stop-opacity="0.45"></stop>
+                    <stop offset="50%" stop-color="#e7def8" stop-opacity="0.3"></stop>
+                    <stop offset="100%" stop-color="#fcf9f2" stop-opacity="0.0"></stop>
+                  </lineargradient>
+                  <lineargradient id="waveStroke" x1="0%" x2="100%" y1="0%" y2="0%">
+                    <stop offset="0%" stop-color="#4c6358"></stop>
+                    <stop offset="40%" stop-color="#8fa89b"></stop>
+                    <stop offset="70%" stop-color="#615b70"></stop>
+                    <stop offset="100%" stop-color="#4c6358"></stop>
+                  </lineargradient>
+                </defs>
+                <!-- Área sombreada -->
+                <path d="M 0,65 C 40,75 55,30 95,45 C 135,60 160,80 205,35 C 245,0 270,55 320,38 L 320,100 L 0,100 Z" fill="url(#softWaveGradient)"></path>
+                <!-- Línea fluida y suave -->
+                <path d="M 0,65 C 40,75 55,30 95,45 C 135,60 160,80 205,35 C 245,0 270,55 320,38" fill="none" stroke="url(#waveStroke)" stroke-linecap="round" stroke-width="3"></path>
+                <!-- Hitos/Puntos de Registro Clínico -->
+                <circle cx="95" cy="45" fill="#fcf9f2" r="4.5" stroke="#4c6358" stroke-width="2.5"></circle>
+                <circle cx="205" cy="35" fill="#fcf9f2" r="4.5" stroke="#8fa89b" stroke-width="2.5"></circle>
+                <circle cx="270" cy="55" fill="#fcf9f2" r="4" stroke="#615b70" stroke-width="2"></circle>
+              </svg>
+            </div>
+
+            <!-- Eje de Días -->
+            <div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm px-1">
+              <span class="text-tertiary">L</span>
+              <span class="text-tertiary">M</span>
+              <span class="font-semibold text-primary">X</span>
+              <span class="text-tertiary">J</span>
+              <span class="font-semibold text-primary">V</span>
+              <span class="text-tertiary">S</span>
+              <span class="text-tertiary">D</span>
+            </div>
+          </div>
+
+          <!-- Desglose Porcentual con Píldoras Suaves -->
+          <div class="flex flex-col gap-space-xs">
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-label-md text-label-md text-on-surface">Predominancia registrada</span>
+              <span class="font-label-sm text-label-sm text-tertiary" id="weekly-total-records">21 registros</span>
+            </div>
+            <!-- Barra multicomponente redondeada -->
+            <div class="w-full h-3 rounded-full flex overflow-hidden bg-surface-container-high p-0.5 gap-0.5">
+              <div class="h-full bg-primary-container rounded-l-full transition-all" style="width: 45%;" title="Calma 45%"></div>
+              <div class="h-full bg-secondary-fixed transition-all" style="width: 25%;" title="Ansiedad leve 25%"></div>
+              <div class="h-full bg-tertiary-fixed transition-all" style="width: 20%;" title="Alegría 20%"></div>
+              <div class="h-full bg-error-container rounded-r-full transition-all" style="width: 10%;" title="Frustración 10%"></div>
+            </div>
+            <!-- Leyenda armónica con estados -->
+            <div class="grid grid-cols-2 gap-y-2 gap-x-space-md pt-space-xs">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Calma</span>
+                <span class="font-label-sm text-label-sm text-tertiary ml-auto">45%</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Ansiedad leve</span>
+                <span class="font-label-sm text-label-sm text-tertiary ml-auto">25%</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Alegría</span>
+                <span class="font-label-sm text-label-sm text-tertiary ml-auto">20%</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-error-container"></span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Frustración</span>
+                <span class="font-label-sm text-label-sm text-tertiary ml-auto">10%</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Imagen Sensorial: Espacio Seguro de Terapia -->
+        <div class="w-full relative rounded-lg overflow-hidden h-36 bg-surface-container-low shadow-sm">
+          <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUSgajkxS7hFZE-wRDZqA8o6RE4YLyynJAoevKNEojMgyOerkRlTFg8WvdeEEwUOx6F98K9dfn0roN_5WD26vZeyNbtVX-dUnZKHFnlAXbbUv9vMFc_ns9Qa5_V53RacD6T5JL4vVoGHrRPeTMhJmvSKWhj3nw3KRdmZKWoj2gQAcMOQngsbYu3-jMIr60pWFs_3G_XUMIa_loU6FZYDeRgfw8AR7TXLsYVqbo-QI')">
+            <div class="w-full h-full bg-gradient-to-r from-surface-container-highest/90 via-surface-container-highest/60 to-transparent p-space-md flex flex-col justify-center">
+              <span class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Espacio protegido</span>
+              <p class="font-headline-sm text-headline-sm text-on-surface max-w-[210px] leading-snug mt-0.5">
+                Tu ritmo es válido. Todo lo registrado aquí abre una conversación.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detonantes Identificados Frecuentemente -->
+        <section class="bg-surface-container-lowest rounded-lg p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary text-[22px]">radar</span>
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">Detonantes frecuentes</h2>
+            </div>
+            <span class="font-label-sm text-label-sm text-tertiary">Patrones semanales</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Factores asociados a cambios en tus curvas de regulación emocional:
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-full">
+              <span class="font-body-sm text-body-sm text-on-surface">Exigencia laboral</span>
+              <span class="font-label-sm text-label-sm bg-tertiary-container/40 text-on-tertiary-container px-2 py-0.5 rounded-full font-semibold">3 veces</span>
+            </div>
+            <div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-full">
+              <span class="font-body-sm text-body-sm text-on-surface">Descanso insuficiente</span>
+              <span class="font-label-sm text-label-sm bg-tertiary-fixed-dim/60 text-on-tertiary-container px-2 py-0.5 rounded-full font-semibold">2 veces</span>
+            </div>
+            <div class="flex items-center gap-2 bg-primary-fixed/40 px-3 py-1.5 rounded-full">
+              <span class="material-symbols-outlined text-primary text-[16px]">favorite</span>
+              <span class="font-body-sm text-body-sm text-on-primary-fixed-variant">Tiempo a solas positivo</span>
+              <span class="font-label-sm text-label-sm bg-primary text-on-primary px-2 py-0.5 rounded-full font-semibold">4 veces</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pensamientos Automáticos Recurrentes -->
+        <section class="bg-surface-container-lowest rounded-lg p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-[22px]">mindfulness</span>
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">Reflexiones cognitivas</h2>
+            </div>
+            <span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full">TCC guiada</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">
+            Puntos destacados para analizar distorsiones y recursos con tu terapeuta:
+          </p>
+          <div class="flex flex-col gap-space-sm">
+            <!-- Reflexión 1: Desafío -->
+            <div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm">
+              <div class="w-8 h-8 rounded-full bg-tertiary-container/30 flex items-center justify-center flex-shrink-0 text-tertiary mt-0.5">
+                <span class="material-symbols-outlined text-[18px]">lightbulb</span>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">Foco a revisar</span>
+                <p class="font-body-md text-body-md text-on-surface mt-0.5 leading-snug">
+                  "Tendencia a anticipar escenarios negativos en el trabajo antes de las reuniones de planificación."
+                </p>
+                <div class="flex items-center gap-1.5 mt-2 text-tertiary">
+                  <span class="material-symbols-outlined text-[15px]">schedule</span>
+                  <span class="font-label-sm text-label-sm">Registrado Martes y Jueves</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reflexión 2: Recurso / Fortaleza -->
+            <div class="bg-primary-fixed/25 p-space-md rounded-xl flex items-start gap-space-sm">
+              <div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
+                <span class="material-symbols-outlined text-[18px]">self_improvement</span>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <span class="font-label-sm text-label-sm text-primary font-semibold uppercase">Herramienta efectiva</span>
+                <p class="font-body-md text-body-md text-on-surface mt-0.5 leading-snug">
+                  "Mayor capacidad para recuperar la calma con respiración diafragmática tras el aviso de entrega."
+                </p>
+                <div class="flex items-center gap-1.5 mt-2 text-primary">
+                  <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                  <span class="font-label-sm text-label-sm">Recurso validado el Viernes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Cuaderno de Notas para la Próxima Sesión -->
+        <section class="bg-surface-container-lowest rounded-lg p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[22px]">draw</span>
+              <h2 class="font-headline-sm text-headline-sm text-on-surface">Cuaderno de sesión</h2>
+            </div>
+            <span class="font-label-sm text-label-sm text-tertiary">Notas personales</span>
+          </div>
+          <div class="flex items-center justify-between pb-1">
+            <span class="font-label-md text-label-md text-on-surface">Temas que quiero hablar con Dra. Marcela:</span>
+            <button class="flex items-center gap-1 font-label-sm text-label-sm text-primary hover:text-on-primary-container" id="addTopicBtn">
+              <span class="material-symbols-outlined text-[16px]">add_circle</span>
+              <span>Añadir</span>
+            </button>
+          </div>
+
+          <!-- Lista interactiva de temas con casillas amables -->
+          <div class="flex flex-col gap-2" id="sessionTopicsList">
+            <!-- Rellenado dinámicamente con app.js -->
+          </div>
+
+          <!-- Input sutil para anotar un punto espontáneo -->
+          <div class="flex items-center gap-2 mt-1">
+            <input class="flex-1 bg-surface-container px-4 py-2.5 rounded-full font-body-sm text-body-sm text-on-surface placeholder:text-outline outline-none focus:bg-surface-container-high transition-colors" id="quickTopicInput" placeholder="Escribir otro tema o duda para la consulta..." type="text" />
+            <button aria-label="Agregar nota rápida" class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center flex-shrink-0 hover:bg-primary-container hover:text-on-primary transition-colors" id="quickTopicAddBtn">
+              <span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Imagen estética de cierre / Cuidado Compasivo -->
+        <div class="bg-surface-container-low rounded-lg p-space-md flex items-center gap-space-md">
+          <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-surface-container">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALaKqjfhwj3mYhpqKgTNY-iDDCp9rmtNCscWbtlcP4jCd7vCUU_CyXAbwqrkBwiETAEVTjLyV7cVAoFRRlq1CW3fdyA4b1iABTZ3InvqMG0xB1gJk6m0thgYJ0pDtlchE0fs3wixCsC61YV8pmCjLhk1YEzYoIEwz_xJ0j6OIuJaMcm9WbDYCtUlZtjH5PB59yw_RhoPD4qc0ffI81OmCE88z256DqsQ_MglURmXA')"></div>
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="font-label-md text-label-md text-primary font-semibold">Tu proceso no tiene prisa</span>
+            <p class="font-body-sm text-body-sm text-tertiary leading-snug">
+              Llegar a consulta habiendo observado tus emociones ya es un acto de valentía y cuidado personal.
+            </p>
+          </div>
+        </div>
+
+        <!-- Botón Principal de Acción -->
+        <div class="sticky bottom-24 z-30 pt-2 flex flex-col gap-2">
+          <button class="w-full h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center gap-2 hover:bg-on-primary-container active:scale-[0.98] transition-all" id="exportConsultationBtn">
+            <span class="material-symbols-outlined text-[22px]">download_for_offline</span>
+            <span class="font-label-lg text-label-lg font-medium tracking-wide">Exportar para mi consulta (PDF clínico)</span>
+          </button>
+          <p class="text-center font-label-sm text-label-sm text-tertiary">
+            Genera un documento estructurado de lectura confidencial y accesible.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================ -->
+  <!-- BARRA DE NAVEGACIÓN INFERIOR MÓVIL (Con Transición SPA) -->
+  <!-- ============================================================ -->
+  <nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-4px_20px_-2px_rgba(92,84,73,0.05)]">
+    <div class="flex justify-around items-center h-20 px-space-xs max-w-xl mx-auto">
+      <a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 w-16 h-14 rounded-full transition-all text-primary font-semibold" data-path="hoy" href="#">
+        <span class="material-symbols-outlined text-[24px]">nest_eco_leaf</span>
+        <span class="font-label-sm text-label-sm">Hoy</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-0.5 w-16 h-14 rounded-full text-on-surface-variant hover:text-on-surface transition-all" data-path="registrar" href="#">
+        <span class="material-symbols-outlined text-[24px]">sentiment_satisfied</span>
+        <span class="font-label-sm text-label-sm">Registrar</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-0.5 w-16 h-14 rounded-full text-on-surface-variant hover:text-on-surface transition-all" data-path="diario" href="#">
+        <span class="material-symbols-outlined text-[24px]">auto_stories</span>
+        <span class="font-label-sm text-label-sm">Diario</span>
+      </a>
+      <a class="flex flex-col items-center justify-center gap-0.5 w-16 h-14 rounded-full text-on-surface-variant hover:text-on-surface transition-all" data-path="sesion" href="#">
+        <span class="material-symbols-outlined text-[24px]">psychology</span>
+        <span class="font-label-sm text-label-sm">Sesión</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- MODAL: ORIENTACIÓN EN SITUACIONES DE CRISIS (PRD FUNCIÓN #5) -->
+  <!-- ============================================================ -->
+  <div id="crisis-modal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-surface-container-lowest max-w-md w-full rounded-2xl shadow-2xl p-space-lg flex flex-col gap-space-md animate-fadeIn max-h-[90vh] overflow-y-auto">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px] text-error">emergency</span>
+          </div>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Orientación en Crisis</h3>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Líneas de ayuda y apoyo inmediato</p>
+          </div>
+        </div>
+        <button class="modal-close-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Aviso ético y legal requerido por el PRD -->
+      <div class="p-3 bg-secondary-container/60 rounded-xl text-on-secondary-container text-body-sm leading-relaxed">
+        <div class="flex items-center gap-1.5 font-semibold mb-1">
+          <span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+          Aclaración Importante
+        </div>
+        <p class="text-[13px]">
+          Esta aplicación es una herramienta de autorregistro personal. <strong>No ofrece atención de emergencias ni garantiza respuesta inmediata</strong>. Si te encuentras en una situación de riesgo o crisis aguda, acude a los servicios de apoyo verificados a continuación.
+        </p>
+      </div>
+
+      <!-- Rutas y Líneas de Atención Directas -->
+      <div class="flex flex-col gap-2">
+        <span class="font-label-md text-label-md text-on-surface font-semibold">Líneas telefónicas de apoyo emocional (24/7):</span>
+
+        <a href="tel:106" class="flex items-center justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[18px]">call</span>
+            </div>
+            <div>
+              <div class="font-label-lg text-label-lg text-on-surface">Línea 106 • Ayuda y Escucha</div>
+              <div class="font-label-sm text-label-sm text-tertiary">Gratuita, confidencial y 24 horas</div>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-primary text-[20px]">arrow_forward</span>
+        </a>
+
+        <a href="tel:123" class="flex items-center justify-between p-3 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-error-container text-error flex items-center justify-center">
+              <span class="material-symbols-outlined text-[18px]">support_agent</span>
+            </div>
+            <div>
+              <div class="font-label-lg text-label-lg text-on-surface">Línea 123 / 911 • Emergencias</div>
+              <div class="font-label-sm text-label-sm text-tertiary">Para situaciones de riesgo inmediato</div>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-error text-[20px]">arrow_forward</span>
+        </a>
+
+        <div class="p-3 rounded-xl bg-surface-container-low text-[13px] text-on-surface-variant">
+          <strong>Atención Universitaria / Institucional:</strong> Recuerda que puedes comunicarte también con el servicio de Bienestar y Psicología de tu programa académico en horarios de consulta.
+        </div>
+      </div>
+
+      <!-- Recurso Inmediato: Ejercicio de Conexión a Tierra 5-4-3-2-1 -->
+      <div class="p-3.5 rounded-xl bg-tertiary-fixed/30 flex flex-col gap-1.5">
+        <span class="font-label-md text-label-md text-on-tertiary-container font-semibold flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[18px] text-tertiary">anchor</span>
+          Anclaje Sensorial (5-4-3-2-1)
+        </span>
+        <p class="font-body-sm text-body-sm text-on-surface leading-snug">
+          Mira a tu alrededor en este instante:
+          <br>• Observa <strong>5 cosas</strong> que puedas ver.
+          <br>• Toca <strong>4 texturas</strong> a tu alcance.
+          <br>• Escucha <strong>3 sonidos</strong> presentes.
+          <br>• Percibe <strong>2 olores</strong> en el ambiente.
+          <br>• Haz <strong>1 respiración profunda</strong> sintiendo tu pecho.
+        </p>
+      </div>
+
+      <button class="modal-close-btn w-full py-3 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+        Volver a la aplicación
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MODAL: PRÁCTICA DE RESPIRACIÓN GUIADA (4-4-6) -->
+  <!-- ============================================================ -->
+  <div id="breathing-modal" class="fixed inset-0 z-50 bg-on-surface/50 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-surface max-w-sm w-full rounded-2xl shadow-2xl p-space-lg flex flex-col items-center text-center gap-space-lg animate-fadeIn">
+      <div class="w-full flex justify-between items-center">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Respiración Diafragmática</span>
+        <button class="modal-close-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Guía visual de respiración dinámica -->
+      <div class="relative w-48 h-48 flex items-center justify-center my-2">
+        <div id="breathing-guide-circle" class="w-36 h-36 rounded-full bg-primary-fixed/60 border-4 border-primary flex items-center justify-center shadow-lg transition-transform duration-1000">
+          <span id="breathing-counter" class="font-headline-lg text-headline-lg text-primary font-bold">4s</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <h4 id="breathing-instruction" class="font-headline-sm text-headline-sm text-on-surface">Inhala profundamente...</h4>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Sigue el ritmo del círculo para regular tu ritmo cardíaco y calmar el sistema nervioso.</p>
+      </div>
+
+      <button class="modal-close-btn w-full py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:opacity-95 transition-all">
+        Finalizar pausa consciente
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MODAL: COMPARTIR RESUMEN (WhatsApp, Copiar & PDF) -->
+  <!-- ============================================================ -->
+  <div id="share-modal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-surface-container-lowest max-w-md w-full rounded-2xl shadow-2xl p-space-lg flex flex-col gap-space-md animate-fadeIn">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px]">ios_share</span>
+          </div>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Compartir con tu Psicóloga</h3>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Sin requerir que ella tenga cuenta</p>
+          </div>
+        </div>
+        <button class="modal-close-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Elige cómo prefieres enviar tu resumen a la <strong>Dra. Marcela</strong> para revisarlo en tu próxima sesión:
+      </p>
+
+      <div class="flex flex-col gap-2.5">
+        <!-- Opción 1: WhatsApp -->
+        <button id="share-whatsapp-btn" class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-left">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-green-100 text-green-700 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">chat</span>
+            </div>
+            <div>
+              <div class="font-label-md text-label-md text-on-surface font-semibold">Enviar por WhatsApp</div>
+              <div class="font-label-sm text-label-sm text-tertiary">Mensaje estructurado con los puntos clave</div>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+        </button>
+
+        <!-- Opción 2: Copiar al portapapeles -->
+        <button id="copy-summary-btn" class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-left">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">content_copy</span>
+            </div>
+            <div>
+              <div class="font-label-md text-label-md text-on-surface font-semibold">Copiar enlace / texto</div>
+              <div class="font-label-sm text-label-sm text-tertiary">Para pegar en correo o mensaje privado</div>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-on-surface-variant text-[20px]">chevron_right</span>
+        </button>
+
+        <!-- Opción 3: Descargar PDF -->
+        <button onclick="window.app.closeShareModal(); window.app.generateClinicalPDF();" class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-left">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+            </div>
+            <div>
+              <div class="font-label-md text-label-md text-on-surface font-semibold">Descargar PDF Clínico</div>
+              <div class="font-label-sm text-label-sm text-tertiary">Formato confidencial listo para imprimir o enviar</div>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-on-surface-variant text-[20px]">download</span>
+        </button>
+      </div>
+
+      <button class="modal-close-btn w-full py-2.5 rounded-full text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors">
+        Cancelar
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- MODAL: PERFIL TERAPÉUTICO (Paciente & Psicóloga) -->
+  <!-- ============================================================ -->
+  <div id="profile-modal" class="fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-surface-container-lowest max-w-md w-full rounded-2xl shadow-2xl p-space-lg flex flex-col gap-space-md animate-fadeIn">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-3">
+          <img alt="Sofía" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0I03R2sjJdmklICf3bVbF49uguVJPyc4pwPRzo0pFm4-Id98aVmMAZA6Sw__x35Tw3fHlNkMqF6_0fSiLOO5acbYvmW9DbblvdJHJ4kVdy4ZAI9zFqZEU9cvoxYqnHCI5bLAJbDT1mpYF2CEIhr4Fzzywt0yn0AzrlO5ywJWDCTNvD44MffhHHP5Ly8Y0mGX6JBKYPtsr_YGEaqmyIVUKV8i5x8Wyv6YYVlNk4L4" />
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-on-surface">Sofía M.</h3>
+            <p class="font-label-sm text-label-sm text-primary">Paciente en proceso terapéutico activo</p>
+          </div>
+        </div>
+        <button class="modal-close-btn w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-2 bg-surface-container-low p-3.5 rounded-xl text-body-sm text-on-surface">
+        <div class="flex justify-between py-1 border-b border-surface-container-high">
+          <span class="text-tertiary">Especialista a cargo:</span>
+          <span class="font-semibold text-on-surface">Dra. Marcela R.</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-surface-container-high">
+          <span class="text-tertiary">Enfoque clínico:</span>
+          <span>Terapia cognitivo-conductual</span>
+        </div>
+        <div class="flex justify-between py-1 border-b border-surface-container-high">
+          <span class="text-tertiary">Frecuencia:</span>
+          <span>Semanal (Jueves 17:00)</span>
+        </div>
+        <div class="flex justify-between py-1">
+          <span class="text-tertiary">Próxima sesión:</span>
+          <span class="font-semibold text-primary">En 3 días</span>
+        </div>
+      </div>
+
+      <div class="p-3 bg-primary-fixed/20 rounded-xl text-[12px] text-on-primary-fixed-variant leading-relaxed">
+        <strong>Confidencialidad:</strong> Tus registros residen localmente en este dispositivo. Tú eliges qué exportar o comentar con la Dra. Marcela en cada cita.
+      </div>
+
+      <button class="modal-close-btn w-full py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md">
+        Cerrar perfil
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- TOAST REUTILIZABLE DE NOTIFICACIÓN COMPASIVA -->
+  <!-- ============================================================ -->
+  <div id="toastNotification" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-space-md py-3 rounded-full shadow-xl flex items-center gap-space-xs transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+    <span class="material-symbols-outlined text-[20px] text-primary-fixed">verified</span>
+    <span class="font-label-md text-label-md" id="toastMessage">Acción completada con calma</span>
+  </div>
+
+  <!-- Script principal de la aplicación -->
+  <script src="js/app.js"></script>
+</body>
+</html>
